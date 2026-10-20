@@ -11,12 +11,16 @@
 ## 安装
 
 ```bash
-brew install --cask lich-wang/homebrew-mactoys/mactoys
+brew tap lich-wang/mactoys
+brew install --cask mactoys
 ```
 
-用全名安装本身就是一次信任动作（Homebrew ≥ 6.0 会隐式信任且仅信任这一个 cask，
-不用单独 `brew trust`；老版 Homebrew 没有信任机制，行为相同）。
-想以后用短名 `brew install --cask mactoys` 的话再补一句 `brew tap lich-wang/homebrew-mactoys`。
+必须先 `tap`：实测 Homebrew 7.0.10 对第三方 cask 不认全名直装，会直接拒绝并提示
+`If you trust this tap, tap it explicitly`。tap 那一步就是你的信任动作。
+
+安装包（`.dmg` / `.pkg`，arm64 + x86_64 通用架构）发布在
+[本仓库的 Releases](https://github.com/lich-wang/homebrew-mactoys/releases) 里 ——
+MacToys 的源码仓库是私有的，私有仓库的 Release 资产对外下不到，所以包放在这边。
 
 ## 更新 / 卸载
 

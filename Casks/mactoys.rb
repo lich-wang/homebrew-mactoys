@@ -5,7 +5,8 @@ cask "mactoys" do
   version "1.1.1"
   sha256 "2ecfb7c24be31bca040672760b6ad68396ba0ea28cdb152b6c4e1ae62d8d2e1e"
 
-  url "https://github.com/lich-wang/MacToys/releases/download/v#{version}/MacToys-#{version}.dmg"
+  # 包发在本仓库的 Release 里：源码仓库是私有的，它的 Release 资产对外 404
+  url "https://github.com/lich-wang/homebrew-mactoys/releases/download/v#{version}/MacToys-#{version}.dmg"
   name "MacToys"
   desc "Caption translation, selection translation and Windows-style key remapping"
   homepage "https://github.com/lich-wang/MacToys/"
