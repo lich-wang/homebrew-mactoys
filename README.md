@@ -27,7 +27,11 @@ brew uninstall --cask mactoys
 
 ## 维护说明
 
-MacToys 每个版本化 Release（产物名 `MacToys-X.Y.Z.dmg`，须与 tag 版本一致）发布后：
+MacToys 仓库推 `v*` tag 后，它的 release 工作流会构建、发版，并自动把这里的
+`version` / `sha256` 改掉再提交（`bump-cask` job，校验和取自 Release 里的
+`SHA256SUMS.txt`）。前提是 MacToys 仓库配了 `TAP_GITHUB_TOKEN`
+（对本仓库有 contents: write 的 fine-grained PAT）；没配就只打印一条提示，
+需要手动改：
 
 1. 更新 `Casks/mactoys.rb` 里的 `version` 和 `sha256`（`shasum -a 256` 取校验和）
 2. `git commit && git push`

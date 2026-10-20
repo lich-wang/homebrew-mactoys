@@ -1,7 +1,7 @@
 cask "mactoys" do
-  # 每次 MacToys 版本化发版后：更新 version，并用
+  # version / sha256 由 MacToys 仓库的 release 工作流在 tag 发版后自动改掉
+  # （bump-cask job，需要 TAP_GITHUB_TOKEN）。手动改的话：
   #   shasum -a 256 MacToys-X.Y.Z.dmg
-  # 更新 sha256
   version "1.2.0"
   sha256 "REPLACE-WITH-ACTUAL-SHA256"
   url "https://github.com/lich-wang/MacToys/releases/download/v#{version}/MacToys-#{version}.dmg"
@@ -13,12 +13,20 @@ cask "mactoys" do
 
   app "MacToys.app"
 
+  uninstall quit: "tech.lich.mactoys"
+
+  zap trash: [
+    "~/Library/Application Support/MacToys",
+    "~/Library/Logs/MacToys.log",
+    "~/Library/Preferences/tech.lich.mactoys.plist",
+  ]
+
   caveats do
-    <<-~EOS
+    <<~EOS
       MacToys is not notarized (no paid Apple Developer account).
       The first launch will be blocked by Gatekeeper. Allow it once:
         System Settings > Privacy & Security > "Open Anyway"
-      Later \`brew upgrade\` runs will not be blocked again
+      Later `brew upgrade` runs will not be blocked again
       (the package carries a stable self-signed identity).
     EOS
   end
