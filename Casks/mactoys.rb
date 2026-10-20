@@ -4,9 +4,10 @@ cask "mactoys" do
   #   shasum -a 256 MacToys-X.Y.Z.dmg
   version "1.2.0"
   sha256 "REPLACE-WITH-ACTUAL-SHA256"
+
   url "https://github.com/lich-wang/MacToys/releases/download/v#{version}/MacToys-#{version}.dmg"
   name "MacToys"
-  desc "Real-time caption translation, selection translation, and Windows-style key remapping"
+  desc "Caption translation, selection translation and Windows-style key remapping"
   homepage "https://github.com/lich-wang/MacToys/"
 
   depends_on macos: :sonoma
