@@ -2,8 +2,8 @@ cask "mactoys" do
   # version / sha256 由 MacToys 仓库的 release 工作流在 tag 发版后自动改掉
   # （bump-cask job，需要 TAP_GITHUB_TOKEN）。手动改的话：
   #   shasum -a 256 MacToys-X.Y.Z.dmg
-  version "1.2.0"
-  sha256 "REPLACE-WITH-ACTUAL-SHA256"
+  version "1.1.1"
+  sha256 "2ecfb7c24be31bca040672760b6ad68396ba0ea28cdb152b6c4e1ae62d8d2e1e"
 
   url "https://github.com/lich-wang/MacToys/releases/download/v#{version}/MacToys-#{version}.dmg"
   name "MacToys"
