@@ -3,7 +3,7 @@ cask "mactoys" do
   # （bump-cask job，需要 TAP_GITHUB_TOKEN）。手动改的话：
   #   shasum -a 256 MacToys-X.Y.Z.dmg
   version "1.1.1"
-  sha256 "2ecfb7c24be31bca040672760b6ad68396ba0ea28cdb152b6c4e1ae62d8d2e1e"
+  sha256 "609373f7c5f47d4baea5bfc1b8b49a391817106f8a17dc2204156f9fc9d48d88"
 
   # 包发在本仓库的 Release 里：源码仓库是私有的，它的 Release 资产对外 404
   url "https://github.com/lich-wang/homebrew-mactoys/releases/download/v#{version}/MacToys-#{version}.dmg"
