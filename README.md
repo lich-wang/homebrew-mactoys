@@ -11,15 +11,18 @@
 ## 安装
 
 ```bash
-brew tap lich-wang/mactoys
-brew trust lich-wang/mactoys
-brew install --cask mactoys
+brew tap lich-wang/mactoys && brew trust lich-wang/mactoys && brew install --cask mactoys
 ```
 
-实测 Homebrew 7.0.10 三步都省不掉：全名直装会被拒（`If you trust this tap,
-tap it explicitly`），只 tap 不 trust 则在加载时报
-`Refusing to load cask ... from untrusted tap`。只想信任这一个 cask 的话用
+三条都省不掉（Homebrew 7.0.10 实测）：全名直装会被拒（`If you trust this tap,
+tap it explicitly`），只 tap 不 trust 则在加载 cask 时报
+`Refusing to load cask ... from untrusted tap`。`brew trust` 就是 Homebrew 要你
+对第三方 tap 给出的显式背书，所以**动手前先看一眼要信任的东西**：
+[Casks/mactoys.rb](Casks/mactoys.rb) 一屏就看完。
+只想信任这一个 cask 而不是整个 tap，就把中间那条换成
 `brew trust --cask lich-wang/mactoys/mactoys`。
+
+装好之后更新就只要 `brew upgrade --cask mactoys` 了。
 
 安装包（`.dmg` / `.pkg`，arm64 + x86_64 通用架构）发布在
 [本仓库的 Releases](https://github.com/lich-wang/homebrew-mactoys/releases) 里 ——
